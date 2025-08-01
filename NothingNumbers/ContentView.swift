@@ -15,7 +15,7 @@ struct ContentView: View {
                 HomeView()
             }
             .tabItem {
-                Label("Home", systemImage: "house")
+                Label("Stats", systemImage: "books.vertical")
             }
             
             NavigationView {
@@ -25,6 +25,7 @@ struct ContentView: View {
                 Label("Categories", systemImage: "list.bullet")
             }
         }
+        .tint(Color("NothingPrimary"))
     }
 }
 
