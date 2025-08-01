@@ -7,6 +7,14 @@
 import Foundation
 import SwiftUI
 
-class CategoryViewModel: NSObject, ObservableObject {
+class CategoryViewModel: ObservableObject {
+    @Published var isPresentingForm: Bool = false
     
+    func openForm() {
+        isPresentingForm = true
+    }
+    
+    func closeForm() {
+        isPresentingForm = false
+    }
 }

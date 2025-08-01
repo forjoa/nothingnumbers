@@ -5,17 +5,26 @@
 //  Created by Joaquín Trujillo on 1/8/25.
 //
 import Foundation
-import CoreData
+import SwiftData
 
-@objc(Numbers)
-class Numbers: NSManagedObject {
+enum NumbersType: Codable {
+    case income
+    case expense
+}
+
+@Model
+class Numbers {
+    var value: Double
+    var note: String?
+    var date: Date
+    var type: NumbersType
+    var category: Category?
     
-    @nonobjc class func fetchRequest() -> NSFetchRequest<Numbers> {
-        return NSFetchRequest<Numbers>(entityName: "Numbers")
+    init(value: Double, note: String? = nil, date: Date, type: NumbersType, category: Category? = nil) {
+        self.value = value
+        self.note = note
+        self.date = date
+        self.type = type
+        self.category = category
     }
-
-    @NSManaged var value: Double
-    @NSManaged var note: String?
-    @NSManaged var date: Date
-    @NSManaged var category: Category
 }

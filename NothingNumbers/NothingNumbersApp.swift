@@ -13,6 +13,7 @@ struct NothingNumbersApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [Category.self, Numbers.self])
         }
     }
 }

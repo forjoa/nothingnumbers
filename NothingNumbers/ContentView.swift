@@ -11,16 +11,12 @@ import SwiftData
 struct ContentView: View {
     var body: some View {
         TabView {
-            NavigationView {
-                HomeView()
-            }
+            HomeView()
             .tabItem {
                 Label("Stats", systemImage: "books.vertical")
             }
             
-            NavigationView {
-                CategoryView()
-            }
+            CategoryView()
             .tabItem {
                 Label("Categories", systemImage: "list.bullet")
             }

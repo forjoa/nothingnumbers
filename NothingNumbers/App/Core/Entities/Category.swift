@@ -5,28 +5,15 @@
 //  Created by Joaquín Trujillo on 1/8/25.
 //
 import Foundation
-import CoreData
+import SwiftData
 
-@objc(Category)
-class Category: NSManagedObject {
+@Model
+class Category {
+    var name: String
+    var colorHex: String
     
-    @nonobjc class func fetchRequest() -> NSFetchRequest<Category> {
-        return NSFetchRequest<Category>(entityName: "Category")
+    init(name: String, colorHex: String) {
+        self.name = name
+        self.colorHex = colorHex
     }
-
-    @NSManaged var name: String
-    @NSManaged var colorHex: String?
-    @NSManaged var numbers: NSSet?
-
-    @objc(addNumbersObject:)
-    @NSManaged func addToNumbers(_ value: Numbers)
-
-    @objc(removeNumbersObject:)
-    @NSManaged func removeFromNumbers(_ value: Numbers)
-
-    @objc(addNumbers:)
-    @NSManaged func addToNumbers(_ values: NSSet)
-
-    @objc(removeNumbers:)
-    @NSManaged func removeFromNumbers(_ values: NSSet)
 }
